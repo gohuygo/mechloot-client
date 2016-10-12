@@ -1,18 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
+import Navbar from './components/Navbar.js';
 
 class App extends Component {
   render() {
     return (
       // Navbar
-      <div className='row'>
-        <div className='nav'>
-          <div className='nav-container text-center'>
-            <p className='brand'>MECHLOOT</p>
-          </div>
-        </div>
-      </div>
-
+      <Navbar brand='MECHLOOT'/>
     );
   }
 }
