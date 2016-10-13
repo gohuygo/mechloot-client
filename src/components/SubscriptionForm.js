@@ -21,6 +21,8 @@ class SubscriptionForm extends React.Component {
     return (
       <form onSubmit={this.handleSubmit} className='subscription-form'>
         <input type='text' placeholder='email' onChange={this.handleChange} />
+        <input type="submit" name="commit" />
+
       </form>
     )
   }
