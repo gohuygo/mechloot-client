@@ -3,7 +3,7 @@ import React from 'react';
 class SubscriptionForm extends React.Component {
   constructor(){
     super();
-    this.state = { value: '' }
+    this.state = { value: '', submitted: false }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -14,7 +14,6 @@ class SubscriptionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log("FUCK")
   }
 
   render() {
@@ -22,7 +21,6 @@ class SubscriptionForm extends React.Component {
       <form onSubmit={this.handleSubmit} className='subscription-form'>
         <input type='text' placeholder='email' onChange={this.handleChange} />
         <input type="submit" name="commit" />
-
       </form>
     )
   }
