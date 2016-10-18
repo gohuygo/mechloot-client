@@ -1,18 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar.js';
-import SubscriptionForm from './components/SubscriptionForm.js';
+import SubscriptionBanner from './components/SubscriptionBanner.js';
 
-class App extends Component {
-  render() {
-    return (
-      // Navbar
-      <div>
-        <Navbar brand='MECHLOOT'/>
-        <SubscriptionForm />
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div>
+    <Navbar brand='MECHLOOT'/>
+    <SubscriptionBanner />
+  </div>
+)
 
 export default App;
