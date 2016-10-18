@@ -60,14 +60,15 @@ a{
   margin: auto;
 }
 
-
 .cta-text {
   padding-top: 20px;
   overflow: hidden;
   font-size: 16px;
 }
 
-
+.thank-you-text {
+  padding-top: 45px;
+}
 
 .footer{
   width: 100%;

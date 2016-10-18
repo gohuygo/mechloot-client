@@ -4,19 +4,35 @@ import { setSubscribed } from '../actions'
 
 const SubscriptionBanner = ({handleSubmit, subscribed}) => {
   if(subscribed){
-    return <div>Thank you</div> //TODO: Refactor as generic BannerMessage component
+    return (
+     //TODO: Refactor as generic BannerMessage component
+      <div className='row'>
+        <div className='cover-container col-lg-12'>
+          <p className='cta-text thank-you-text text-center'><span>Thank you for subscribing!</span></p>
+        </div>
+      </div>
+    )
   }else{
     return (
       //TODO: Refactor to SubscribeForm component
-      <div>
-        <form onSubmit={(e) => handleSubmit(e)} className='subscription-form'>
-          <input type='text' placeholder='email' />
-          <input type="submit" name="commit" />
-        </form>
+      <div className='row'>
+        <div className='cover-container col-lg-12'>
+          <p className='cta-text text-center'><span>Subscribe to get updates on Giveaways and Sales!</span></p>
+
+          <div className='subscription-form-container'>
+            <form onSubmit={(e) => handleSubmit(e)} className='form-inline subscription-form'>
+              <input type='text' placeholder='email' className='form-control'/>
+              <input type="submit" name="commit" className='btn btn-default'/>
+            </form>
+          </div>
+        </div>
       </div>
     )
   }
 }
+
+
+
 
 SubscriptionBanner.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
