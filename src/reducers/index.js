@@ -1,15 +1,11 @@
 import { combineReducers } from 'redux'
 
-const initialSubscription = {
-  subscribed: false
-}
-
-const subscribed = (state = initialSubscription, action) => {
+const subscribed = (state = false, action) => {
   switch (action.type) {
     case 'SET_SUBSCRIBED':
       return true
     default:
-      return state.subscribed
+      return state
   }
 }
 
