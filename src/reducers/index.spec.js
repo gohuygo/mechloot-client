@@ -4,7 +4,7 @@ import reducer from './index.js'
 
 describe('reducer', () => {
   describe('when initial state is not provided', () => {
-    it('should provide the initial state', () => {
+    it('provides the initial state', () => {
       const action = {}
 
       deepFreeze(action)
@@ -12,7 +12,7 @@ describe('reducer', () => {
       expect(reducer(undefined, action)).toEqual({ subscribed: false })
     })
 
-    it('should handle the SET_SUBSCRIBED action', () => {
+    it('handles the SET_SUBSCRIBED action', () => {
       const action = { type: 'SET_SUBSCRIBED' }
 
       deepFreeze(action)
@@ -20,7 +20,7 @@ describe('reducer', () => {
       expect(reducer(undefined, action)).toEqual({ subscribed: true })
     })
 
-    it('should handle the undefined action', () => {
+    it('handles the undefined action', () => {
       const action = { type: undefined }
 
       deepFreeze(action)
@@ -28,7 +28,7 @@ describe('reducer', () => {
       expect(reducer(undefined, action)).toEqual({ subscribed: false })
     })
 
-    it('should handle the default action', () => {
+    it('handles the default action', () => {
       const action = { type: 'RANDOM-123' }
 
       deepFreeze(action)
@@ -39,7 +39,7 @@ describe('reducer', () => {
 
   describe('when initial state is provided', () => {
     describe('when subscribed state is true', () => {
-      it('should handle the SET_SUBSCRIBED action for passed in state', () => {
+      it('handles the SET_SUBSCRIBED action for passed in state', () => {
         const state = { subscribed: true }
         const action = { type: 'SET_SUBSCRIBED' }
 
@@ -49,7 +49,7 @@ describe('reducer', () => {
         expect(reducer(state, action)).toEqual({ subscribed: true })
       })
 
-      it('should handle the default action for passed in state', () => {
+      it('handles the default action for passed in state', () => {
         const state =  { subscribed: true }
         const action = { type: 'RANDOM-123' }
 
@@ -61,7 +61,7 @@ describe('reducer', () => {
     })
 
     describe('when subscribed state is false', () => {
-      it('should handle the SET_SUBSCRIBED action for passed in state', () => {
+      it('handles the SET_SUBSCRIBED action for passed in state', () => {
         const state = { subscribed: false }
         const action = { type: 'SET_SUBSCRIBED' }
 
@@ -71,7 +71,7 @@ describe('reducer', () => {
         expect(reducer(state, action)).toEqual({ subscribed: true })
       })
 
-      it('should handle the default action for passed in state', () => {
+      it('handles the default action for passed in state', () => {
         const state = { subscribed: false }
         const action = { type: 'RANDOM-123' }
 
