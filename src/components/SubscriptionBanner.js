@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux'
-import { setSubscribed } from '../actions'
+import { setSubscribed } from '../actions/subscriptions'
 
 const SubscriptionBanner = ({handleSubmit, subscribed}) => {
   if(subscribed){
