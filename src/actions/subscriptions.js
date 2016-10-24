@@ -7,6 +7,7 @@ export const setSubscribed = (subscribed, email) => {
 
     return fetch(url, { method: 'post' })
       .then(function(result) {
+        console.log("FUCK")
         if (result.status === 200) {
           dispatch({
             type: SET_SUBSCRIBED,
@@ -15,6 +16,8 @@ export const setSubscribed = (subscribed, email) => {
           return 'result'
         }
         return 'failed' //todo
+      }, function(error) {
+        return 'error'
       })
   }
 }
