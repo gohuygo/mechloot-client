@@ -1,3 +1,5 @@
+import fetch from 'isomorphic-fetch'
+
 export const SET_SUBSCRIBED = 'SET_SUBSCRIBED'
 
 export const setSubscribed = (subscribed, email) => {
@@ -7,7 +9,6 @@ export const setSubscribed = (subscribed, email) => {
 
     return fetch(url, { method: 'post' })
       .then(function(result) {
-        console.log("FUCK")
         if (result.status === 200) {
           dispatch({
             type: SET_SUBSCRIBED,
@@ -17,7 +18,7 @@ export const setSubscribed = (subscribed, email) => {
         }
         return 'failed' //todo
       }, function(error) {
-        return 'error'
+        console.log(error)
       })
   }
 }
