@@ -4,7 +4,6 @@
 //   })
 // })
 import { setSubscribed } from '../actions/subscriptions'
-import nock from 'nock'
 import configureStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 import * as actions from '../actions/subscriptions'
