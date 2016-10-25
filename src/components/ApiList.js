@@ -13,11 +13,15 @@ class ApiList extends React.Component {
     let apiList = this.props.apiList
     console.log( this.props.apiList)
     return (
-      <div className='row'>
-        {apiList.map(api =>
-          api.name ? <p>{api.name}</p> : ''
-
-          )}
+      <div className='row container body-container'>
+        {apiList.map(api => (
+          api.name ?
+            <div className='col-lg-4'>
+              <p>{api.name}</p>
+            </div>
+          :
+          '')
+        )}
       </div>
     );
   }
