@@ -27,7 +27,6 @@ const SubscriptionBanner = ({handleSubmit, subscribed}) => {
               <input type="submit" name="commit" className='btn btn-default'/>
             </form>
           </div>
-
         </div>
       </div>
     )
@@ -60,4 +59,4 @@ const visibleSubscriptionBanner = connect(
   mapDispatchToProps
 )(SubscriptionBanner)
 
-export default visibleSubscriptionBanner;
+export default visibleSubscriptionBanner
