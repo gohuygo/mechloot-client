@@ -1,11 +1,11 @@
 import fetch from 'isomorphic-fetch'
+import { apiUrlStringBuilder } from '../utilities/apiUrlStringBuilder'
 
 export const SET_SUBSCRIBED = 'SET_SUBSCRIBED'
 
 export const setSubscribed = (subscribed, email) => {
   return function(dispatch) {
-    var url = process.env.REACT_APP_HOST + ':' + process.env.REACT_APP_PORT
-              + '/api/v1/subscriptions?email=' + email
+    var url = apiUrlStringBuilder() + '/api/v1/subscriptions?email=' + email
 
     return fetch(url, { method: 'post' })
       .then(function(result) {
