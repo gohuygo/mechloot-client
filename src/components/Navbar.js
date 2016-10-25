@@ -5,8 +5,9 @@ class Navbar extends React.Component {
     return (
       <div className='row'>
         <div className='nav'>
-          <div className='nav-container text-center'>
-            <p className='brand'>{this.props.brand}</p>
+          <div className='nav-container'>
+            <span className='brand'>{this.props.brand}</span>
+            <span className='subscribe-button'>SUBSCRIBE</span>
           </div>
         </div>
       </div>

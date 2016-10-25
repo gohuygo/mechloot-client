@@ -34,16 +34,16 @@ a{
 
 .nav {
   font-size: 18px;
-  height: 90px;
+  height: 45px;
   border-radius: 0px !important;
   border-bottom: #FBF8E8 1px solid !important;
   margin-bottom: 0 !important;
 }
 
 .nav-container{
-  width: 650px;
+  width: 768px;
   margin: auto;
-  margin-top: 30px;
+  padding-top: 8px;
 }
 
 .cover-container {
