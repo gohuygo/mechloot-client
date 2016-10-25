@@ -8,11 +8,11 @@
   src: url('./fonts/SourceSansPro-Light.otf');
 }
 
-
 html *{
   font-family: SourceSansPro, 'Helvetica', sans-serif;
   font-weight: 200;
   letter-spacing: 1px;
+  font-size: 14px;
 }
 
 body {
@@ -22,36 +22,46 @@ a{
   text-decoration: none !important;
 }
 
+.subscribe-button{
+  /*#e052a0,#f15c41*/
+  background-image: linear-gradient(to right, #68e052,#0d40b3);
+  cursor: pointer;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 12px;
+  padding: 5px 20px;
+  display: inline-block;
+  float: right;
+}
+.subscribe-button:hover{
+  background-image: linear-gradient(to right, #3ec7e0,#526bf4);
+}
+
 .subscription-form-container{
   text-align: center;
 }
 
 .brand {
   font-family: Bebas;
-  font-size: 24px;
+  font-size: 20px;
   color: #526373;
-}
-
-.nav {
-  font-size: 18px;
-  height: 45px;
-  border-radius: 0px !important;
-  border-bottom: #FBF8E8 1px solid !important;
-  margin-bottom: 0 !important;
+  position:relative;
+  top: 2px;
 }
 
 .nav-container{
   width: 768px;
   margin: auto;
-  padding-top: 8px;
+  padding-top: 14px;
+  height: 60px;
+  border-bottom: #FBF8E8 1px solid !important;
+
 }
 
 .cover-container {
   height: 120px;
   width: 100%;
-  background: #555555;
-  color: white;
-  /*background: url(assets/cover.png) no-repeat center center;*/
+  background: #ededed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -67,14 +77,10 @@ a{
   margin: auto;
 }
 
-.cta-text {
+.subscribe-text {
   padding-top: 20px;
   overflow: hidden;
   font-size: 16px;
-}
-
-.thank-you-text {
-  padding-top: 45px;
 }
 
 .footer{
