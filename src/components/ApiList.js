@@ -10,11 +10,14 @@ class ApiList extends React.Component {
   }
 
   render() {
+    let apiList = this.props.apiList
+    console.log( this.props.apiList)
     return (
       <div className='row'>
-        <div className='col-lg-12'>
-          Hello world
-        </div>
+        {apiList.map(api =>
+          api.name ? <p>{api.name}</p> : ''
+
+          )}
       </div>
     );
   }
