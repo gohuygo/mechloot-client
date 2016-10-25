@@ -5,7 +5,7 @@ export const SET_API_LIST = 'SET_API_LIST'
 export const fetchApis = () => {
   return function(dispatch) {
     var url = apiUrlStringBuilder() + '/api/v1/apis'
-
+    // how to catch for errors?
     return fetch(url, { method: 'get' })
       .then(response => response.json())
       .then(json => dispatch({type: SET_API_LIST,api_list: json}))

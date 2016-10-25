@@ -10,11 +10,10 @@ class ApiList extends React.Component {
   }
 
   render() {
-    console.log(this.props.apiList)
     return (
       <div className='row'>
         <div className='col-lg-12'>
-        Hello world
+          Hello world
         </div>
       </div>
     );
