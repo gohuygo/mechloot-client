@@ -49,7 +49,7 @@ class SubscriptionButton extends React.Component {
           contentLabel="Example Modal"
           style={customStyles}>
 
-          <button onClick={this.closeModal}>close</button>
+          <i className='glyphicon glyphicon-remove mouse-cursor' onClick={this.closeModal}></i>
 
           <p className='subscribe-text text-center'><span>Subscribe to get updates on Giveaways and Sales!</span></p>
           <div className='subscription-form-container'>

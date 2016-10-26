@@ -5,7 +5,7 @@ import ApiList from './components/ApiList.js';
 
 const App = () => (
   <div>
-    <Navbar brand='Boardgame Beast'/>
+    <Navbar brand='MECHLOOT'/>
     <ApiList />
   </div>
 )
