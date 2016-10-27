@@ -5,7 +5,7 @@ class Product extends React.Component {
     const product = this.props
 
     return(
-      <div className='col-lg-4 product-container'>
+      <div className='col-lg-4 col-md-6 col-sm-12 product-container'>
         <a href={product.product_url} target='_blank'>
           <img role="presentation" src={product.image_url} className='product-image'></img>
           <p>{product.name}</p>
