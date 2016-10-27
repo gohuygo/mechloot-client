@@ -56,14 +56,13 @@ a{
   font-size: 24px;
   color: #526373;
   position:relative;
-  top: 2px;
 }
 
 .nav-container{
   width: 768px;
   margin: auto;
   padding-top: 14px;
-  height: 60px;
+  height: 58px;
   border-bottom: #FBF8E8 1px solid !important;
 
 }

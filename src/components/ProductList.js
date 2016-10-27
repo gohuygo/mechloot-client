@@ -1,23 +1,22 @@
 import React, { PropTypes } from 'react';
-import { fetchApis } from '../actions/apis'
+import { fetchProducts } from '../actions/products'
 import { connect } from 'react-redux'
 // import fetch from 'isomorphic-fetch'
 
-class ApiList extends React.Component {
+class ProductList extends React.Component {
   componentDidMount() {
     const dispatch = this.props.dispatch
-    dispatch(fetchApis())
+    dispatch(fetchProducts())
   }
 
   render() {
-    let apiList = this.props.apiList
-    console.log( this.props.apiList)
+    let productList = this.props.productList
     return (
       <div className='row container body-container'>
-        {apiList.map(api => (
-          api.name ?
+        {productList.map(product => (
+          product.name ?
             <div className='col-lg-4'>
-              <p>{api.name}</p>
+              <p>{product.name}</p>
             </div>
           :
           '')
@@ -27,18 +26,18 @@ class ApiList extends React.Component {
   }
 }
 
-ApiList.propTypes = {
-  apiList: PropTypes.array
+ProductList.propTypes = {
+  productList: PropTypes.array
 }
 
 const mapStateToProps = (state) => {
   return {
-    apiList: state.apiList
+    productList: state.productList
   }
 }
 
-const visibleApiList = connect(
+const visibleProductList = connect(
   mapStateToProps
-)(ApiList)
+)(ProductList)
 
-export default visibleApiList
+export default visibleProductList

@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar.js';
-import ApiList from './components/ApiList.js';
+import ProductList from './components/ProductList.js';
 
 const App = () => (
   <div>
-    <Navbar brand='MECHLOOT'/>
-    <ApiList />
+    <Navbar brand='PIRATE RADIO'/>
+    <ProductList />
   </div>
 )
 

@@ -10,9 +10,9 @@ const subscribed = (state = false, action) => {
 }
 
 
-const apiList = (state = [], action) => {
+const productList = (state = [], action) => {
   switch (action.type) {
-    case 'SET_API_LIST':
+    case 'SET_PRODUCT_LIST':
       return action.api_list
     default:
       return state
@@ -22,7 +22,7 @@ const apiList = (state = [], action) => {
 
 const rootReducer = combineReducers({
   subscribed,
-  apiList
+  productList
 })
 
 export default rootReducer
