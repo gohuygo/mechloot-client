@@ -87,7 +87,9 @@ a{
 
 .product-image {
   max-width:100%;
-  height: 240px;
+  height: 125px;
+  margin: auto;
+  display: block;
 }
 
 .product-description {
