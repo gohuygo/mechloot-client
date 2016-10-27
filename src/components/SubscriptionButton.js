@@ -23,18 +23,6 @@ class SubscriptionButton extends React.Component {
     const { handleSubmit } = this.props
     let emailInput
 
-    const customStyles = {
-      overlay : {
-        backgroundColor   : 'rgba(255, 255, 255, 0.75)'
-      },
-      content : {
-        top                        : '90px',
-        left                       : '200px',
-        right                      : '200px',
-        bottom                     : '90px',
-      }
-    }
-
     return (
       //TODO: Refactor to SubscribeForm component
       // Look into how this works: ref={(node) => {input = node}}
@@ -46,19 +34,20 @@ class SubscriptionButton extends React.Component {
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
-          contentLabel="Example Modal"
-          style={customStyles}>
-
-          <i className='glyphicon glyphicon-remove mouse-cursor' onClick={this.closeModal}></i>
-
-          <p className='subscribe-text text-center'><span>Subscribe to get updates on Giveaways and Sales!</span></p>
-          <div className='subscription-form-container'>
-            <form onSubmit={(e) => handleSubmit(e, emailInput.value, this.closeModal)} className='form-inline subscription-form'>
-              <input type='text' ref={(node) => {emailInput = node}} placeholder='email' className='form-control'/>
-              <input type="submit" name="commit" className='btn btn-default'/>
-            </form>
+          contentLabel='Example Modal'
+          className='modal-dialog'>
+          <div className='modal-content'>
+            <div className='modal-body'>
+              <i className='glyphicon glyphicon-remove mouse-cursor close' onClick={this.closeModal}></i>
+              <p className='subscribe-text text-center'><span>Subscribe to get the latest news and updates on your favorite podcasts.</span></p>
+              <div className='subscription-form-container'>
+                <form onSubmit={(e) => handleSubmit(e, emailInput.value, this.closeModal)} className='form-inline subscription-form'>
+                  <input type='text' ref={(node) => {emailInput = node}} placeholder='email' className='form-control'/>
+                  <input type="submit" name="commit" className='btn btn-default'/>
+                </form>
+              </div>
+            </div>
           </div>
-
         </Modal>
 
       </span>
