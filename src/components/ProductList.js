@@ -20,7 +20,7 @@ class ProductList extends React.Component {
             {...product} />
         )}
       </div>
-    );
+    )
   }
 }
 
