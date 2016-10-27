@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { fetchProducts } from '../actions/products'
 import { connect } from 'react-redux'
-// import fetch from 'isomorphic-fetch'
+import Product from './Product'
 
 class ProductList extends React.Component {
   componentDidMount() {
@@ -10,21 +10,21 @@ class ProductList extends React.Component {
   }
 
   render() {
-    let productList = this.props.productList
+    const { productList } = this.props
+
     return (
       <div className='row container body-container'>
-        {productList.map(product => (
-          product.name ?
-            <div className='col-lg-4'>
-              <p>{product.name}</p>
-            </div>
-          :
-          '')
+        { productList.map(product =>
+          <Product
+            key={product.id}
+            {...product} />
         )}
       </div>
     );
   }
 }
+
+// TODO: Refactor to container/presenter
 
 ProductList.propTypes = {
   productList: PropTypes.array
