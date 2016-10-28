@@ -4,12 +4,22 @@
 }
 
 @font-face {
-  font-family: SourceSansPro;
+  font-family: SourceSansPro-Light;
   src: url('./fonts/SourceSansPro-Light.otf');
 }
 
+@font-face {
+  font-family: SourceSansPro-Regular;
+  src: url('./fonts/SourceSansPro-Regular.otf');
+}
+
+.custom-bolded{
+  font-family: SourceSansPro-Regular !important;
+}
+
+
 html *{
-  font-family: SourceSansPro, 'Helvetica', sans-serif;
+  font-family: SourceSansPro-Light, 'Helvetica', sans-serif;
   font-weight: 200;
   color: #515151;
   letter-spacing: 1px;
@@ -93,10 +103,24 @@ a{
   display: block;
 }
 
+.product-image-container{
+  background-color: #f7f7f7;
+  border-top: 1px solid #f7f7f7;
+}
+
+.product-text-info-container{
+  border: 1px solid #f7f7f7;
+  border-top: none;
+  padding: 0 5px;
+
+}
+
 .product-description {
   height: 30px;
+  font-size: 13px;
   width: 100%;
 }
+
 
 .hide-overflow {
   overflow:hidden;
@@ -113,7 +137,7 @@ a{
 }
 
 .product-container {
-  padding: 0 20px;
+  padding: 5px 20px;
 }
 
 .product-container a{
