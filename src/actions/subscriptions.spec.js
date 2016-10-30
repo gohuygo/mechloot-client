@@ -1,8 +1,3 @@
-// describe('PENDING::Action::Subscriptions', () => {
-//   it('pending to do', () => {
-//     expect(true).toEqual(true)
-//   })
-// })
 import { setSubscribed } from '../actions/subscriptions'
 import configureStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
@@ -13,59 +8,10 @@ const middlewares = [ thunk ]
 const mockStore = configureStore(middlewares)
 
 describe('Action::Subscriptions', () => {
-  describe('#setSubscribed()', () => {
-    // describe('when fetch returns result 200', () => {
-    //   beforeEach(() => {
-    //     fetchMock.get('https://api.github.com/users/1/repos', { status: 200 })
-    //   })
-
-    //   afterEach(() =>{
-    //     fetchMock.restore()
-    //   })
-
-    //   describe('when subscribed is true', () => {
-    //     it('returns SET_SUBSCRIBED type and subscribed true', () => {
-    //       const subscribed = { type: 'SET_SUBSCRIBED', subscribed: true }
-    //       const store = mockStore({})
-
-    //       store.dispatch(subscribed)
-
-    //       const actions = store.getActions()
-
-    //       expect(actions).toEqual([subscribed])
-    //     })
-    //   })
-
-    //   describe('when subscribed is false', () => {
-    //     it('returns SET_SUBSCRIBED type and subscribed false', () => {
-    //       const subscribed = { type: 'SET_SUBSCRIBED', subscribed: false }
-    //       const store = mockStore({})
-
-    //       store.dispatch(subscribed)
-
-    //       const actions = store.getActions()
-
-    //       expect(actions).toEqual([subscribed])
-    //     })
-    //   })
-
-    //   describe('when subscribed is undefined', () => {
-    //     it('returns SET_SUBSCRIBED type and subscribed false', () => {
-    //       const subscribed = { type: 'SET_SUBSCRIBED', subscribed: undefined }
-    //       const store = mockStore({})
-
-    //       store.dispatch(subscribed)
-
-    //       const actions = store.getActions()
-
-    //       expect(actions).toEqual([subscribed])
-    //     })
-    //   })
-    // })
-
+  describe('#postEmail()', () => {
     describe('when fetch does not return 200', () => {
       beforeEach(() =>{
-        fetchMock.get('http://www.example.com', {status: 200});
+        fetchMock.get('http://www.example.com', {status: 404});
       })
 
       afterEach(() =>{
@@ -74,13 +20,13 @@ describe('Action::Subscriptions', () => {
 
       describe('when subscribed is true', () => {
         it('does nothing', () => {
-          const subscribed = { type: 'SET_SUBSCRIBED', subscribed: true }
-          const store = mockStore({subscribed: false})
+          const postEmail = { type: 'POST_EMAIL', email: 'yo@example.com' }
+          const store = mockStore({email: ''})
 
-          store.dispatch(subscribed)
+          store.dispatch(postEmail)
           const actions = store.getActions()
 
-          expect(actions).toEqual([])
+          expect(actions).toEqual([postEmail])
         })
       })
     })

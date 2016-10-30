@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux'
-import { postSubscribed } from '../actions/subscriptions'
+import { postEmail } from '../actions/subscriptions'
 import Modal from 'react-modal'
 
 class SubscriptionButton extends React.Component {
@@ -69,7 +69,7 @@ const mapDispatchToProps = (dispatch) => {
     handleSubmit: (e, email, closeModal) => {
       e.preventDefault()
 
-      dispatch(postSubscribed(email))
+      dispatch(postEmail(email))
       closeModal()
     }
   };

@@ -8,6 +8,6 @@ export const fetchProducts = () => {
     // how to catch for errors?
     return fetch(url, { method: 'get' })
       .then(response => response.json())
-      .then(json => dispatch({type: SET_PRODUCT_LIST,api_list: json}))
+      .then(json => dispatch({type: SET_PRODUCT_LIST, productList: json}))
   }
 }
