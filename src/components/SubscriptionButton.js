@@ -28,7 +28,7 @@ class SubscriptionButton extends React.Component {
       // Look into how this works: ref={(node) => {input = node}}
 
       <span>
-        <span className='subscribe-button' onClick={this.openModal}>SUBSCRIBE</span>
+        <span className='subscribe-button default-flashy-button' onClick={this.openModal}>SUBSCRIBE</span>
 
         <Modal
           isOpen={this.state.modalIsOpen}
@@ -43,7 +43,7 @@ class SubscriptionButton extends React.Component {
               <div className='subscription-form-container'>
                 <form onSubmit={(e) => handleSubmit(e, emailInput.value, this.closeModal)} className='form-inline subscription-form'>
                   <input type='text' ref={(node) => {emailInput = node}} placeholder='email' className='form-control'/>
-                  <input type="submit" name="commit" className='btn btn-default'/>
+                  <input type="submit" name="commit" className='btn default-flashy-button'/>
                 </form>
               </div>
             </div>
