@@ -1,35 +1,28 @@
-import { setSubscribed } from '../actions/subscriptions'
+import { postEmail } from '../actions/subscriptions'
 import configureStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
-import * as actions from '../actions/subscriptions'
 import fetchMock from 'fetch-mock'
+import { apiUrlStringBuilder } from '../utilities/apiUrlStringBuilder'
 
 const middlewares = [ thunk ]
 const mockStore = configureStore(middlewares)
 
 describe('Action::Subscriptions', () => {
+
   describe('#postEmail()', () => {
-    describe('when fetch does not return 200', () => {
-      beforeEach(() =>{
-        fetchMock.get('http://www.example.com', {status: 404});
-      })
+    it('calls the correct url', () => {
+      const email = 'test@example.com'
 
-      afterEach(() =>{
-        fetchMock.restore();
-      })
+      fetchMock.mock(
+        apiUrlStringBuilder()+'/api/v1/subscriptions?email='+email,
+        { status: 200 }
+      );
 
-      describe('when subscribed is true', () => {
-        it('does nothing', () => {
-          const postEmail = { type: 'POST_EMAIL', email: 'yo@example.com' }
-          const store = mockStore({email: ''})
+      const store = mockStore({email: ''})
 
-          store.dispatch(postEmail)
-          const actions = store.getActions()
+      store.dispatch(postEmail(email))
 
-          expect(actions).toEqual([postEmail])
-        })
-      })
+      fetchMock.restore();
     })
-
   })
 })
