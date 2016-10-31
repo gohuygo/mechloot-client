@@ -1,5 +1,6 @@
 import 'isomorphic-fetch'
 import { apiUrlStringBuilder } from '../utilities/apiUrlStringBuilder'
+
 export const SET_PRODUCT_LIST = 'SET_PRODUCT_LIST'
 
 export const fetchProducts = () => {

@@ -10,7 +10,7 @@ const mockStore = configureStore(middlewares)
 describe('Action::Subscriptions', () => {
 
   describe('#postEmail()', () => {
-    it('calls the correct url', () => {
+    it('posts the correct url', () => {
       const email = 'test@example.com'
 
       fetchMock.post(
