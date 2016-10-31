@@ -8,7 +8,8 @@ export const fetchProducts = () => {
     var url = apiUrlStringBuilder() + '/api/v1/products'
     // how to catch for errors?
     return fetch(url, { method: 'get' })
-      .then(response => dispatch({ type: SET_PRODUCT_LIST,
-                                   productList: response.json }))
+      .then(response => response.json())
+      .then(productList => dispatch({ type: SET_PRODUCT_LIST,
+                                      productList: productList }))
   }
 }
