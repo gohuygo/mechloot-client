@@ -13,7 +13,7 @@ describe('Action::Subscriptions', () => {
     it('calls the correct url', () => {
       const email = 'test@example.com'
 
-      fetchMock.mock(
+      fetchMock.post(
         apiUrlStringBuilder()+'/api/v1/subscriptions?email='+email,
         { status: 200 }
       );
