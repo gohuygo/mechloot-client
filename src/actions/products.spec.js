@@ -11,7 +11,7 @@ describe('Action::Products', () => {
 
   describe('#fetchProducts()', () => {
     it('posts the correct url and dispatches action', () => {
-      var expectedAction = { type: SET_PRODUCT_LIST, productList: 'hello'}
+      var expectedAction = { type: SET_PRODUCT_LIST, productList: 'asdfa'}
 
       fetchMock.get(
         apiUrlStringBuilder() + '/api/v1/products',
@@ -21,6 +21,8 @@ describe('Action::Products', () => {
       const store = mockStore({productList: []})
 
       store.dispatch(fetchProducts())
+        // TODO: This line below doesnt actually work.
+        //       You can set expectedAction to anything and it'll pass.
         .then(response => expect(store.getActions()).toEqual([expectedAction]))
       fetchMock.restore();
     })
