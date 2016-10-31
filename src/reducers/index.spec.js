@@ -2,22 +2,22 @@ import expect from 'expect'
 import deepFreeze from 'deep-freeze'
 import reducer from './index.js'
 
-describe('reducer', () => {
+describe('index', () => {
   describe('when initial state is not provided', () => {
     it('provides the initial state', () => {
       const action = {}
 
       deepFreeze(action)
 
-      expect(reducer(undefined, action)).toEqual({ subscribed: false })
+      expect(reducer(undefined, action)).toEqual({ productList: [] })
     })
 
-    it('handles the SET_SUBSCRIBED action', () => {
-      const action = { type: 'SET_SUBSCRIBED' }
+    it('handles the SET_PRODUCT_LIST action', () => {
+      const action = { type: 'SET_PRODUCT_LIST', productList: ['product'] }
 
       deepFreeze(action)
 
-      expect(reducer(undefined, action)).toEqual({ subscribed: true })
+      expect(reducer(undefined, action)).toEqual({ productList: ['product'] })
     })
 
     it('handles the undefined action', () => {
@@ -25,7 +25,7 @@ describe('reducer', () => {
 
       deepFreeze(action)
 
-      expect(reducer(undefined, action)).toEqual({ subscribed: false })
+      expect(reducer(undefined, action)).toEqual({ productList: [] })
     })
 
     it('handles the default action', () => {
@@ -33,53 +33,29 @@ describe('reducer', () => {
 
       deepFreeze(action)
 
-      expect(reducer(undefined, action)).toEqual({ subscribed: false })
+      expect(reducer(undefined, action)).toEqual({ productList: [] })
     })
   })
 
   describe('when initial state is provided', () => {
-    describe('when subscribed state is true', () => {
-      it('handles the SET_SUBSCRIBED action for passed in state', () => {
-        const state = { subscribed: true }
-        const action = { type: 'SET_SUBSCRIBED' }
+    it('handles the SET_PRODUCT_LIST action for passed in state', () => {
+      const state = { productList: [] }
+      const action = { type: 'SET_PRODUCT_LIST', productList: ['product'] }
 
-        deepFreeze(state)
-        deepFreeze(action)
+      deepFreeze(state)
+      deepFreeze(action)
 
-        expect(reducer(state, action)).toEqual({ subscribed: true })
-      })
-
-      it('handles the default action for passed in state', () => {
-        const state =  { subscribed: true }
-        const action = { type: 'RANDOM-123' }
-
-        deepFreeze(state)
-        deepFreeze(action)
-
-        expect(reducer(state, action)).toEqual({ subscribed: true })
-      })
+      expect(reducer(state, action)).toEqual({ productList: ['product'] })
     })
 
-    describe('when subscribed state is false', () => {
-      it('handles the SET_SUBSCRIBED action for passed in state', () => {
-        const state = { subscribed: false }
-        const action = { type: 'SET_SUBSCRIBED' }
+    it('handles the default action for passed in state', () => {
+      const state =  { productList: []  }
+      const action = { type: 'RANDOM-123', productList: ['product'] }
 
-        deepFreeze(state)
-        deepFreeze(action)
+      deepFreeze(state)
+      deepFreeze(action)
 
-        expect(reducer(state, action)).toEqual({ subscribed: true })
-      })
-
-      it('handles the default action for passed in state', () => {
-        const state = { subscribed: false }
-        const action = { type: 'RANDOM-123' }
-
-        deepFreeze(state)
-        deepFreeze(action)
-
-        expect(reducer(state, action)).toEqual({ subscribed: false })
-      })
+      expect(reducer(state, action)).toEqual(state)
     })
   })
 })
