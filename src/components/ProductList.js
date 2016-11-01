@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import { fetchProducts } from '../actions/products'
 import { connect } from 'react-redux'
 import Product from './Product'
+import { Link } from 'react-router'
 
 class ProductList extends React.Component {
   componentDidMount() {
@@ -15,9 +16,11 @@ class ProductList extends React.Component {
     return (
       <div className='row container body-container'>
         { productList.map(product =>
-          <Product
-            key={product.id}
-            {...product} />
+          <Link key={product.id} to={`/product/${product.id}`}>
+            <Product
+              key={product.id}
+              {...product} />
+          </Link>
         )}
       </div>
     )
@@ -25,7 +28,6 @@ class ProductList extends React.Component {
 }
 
 // TODO: Refactor to container/presenter
-
 ProductList.propTypes = {
   productList: PropTypes.array
 }

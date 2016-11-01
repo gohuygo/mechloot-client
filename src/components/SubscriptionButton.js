@@ -6,7 +6,9 @@ import Modal from 'react-modal'
 class SubscriptionButton extends React.Component {
   constructor () {
     super()
-    this.state = {modalIsOpen: false}
+    this.state = {
+      modalIsOpen: false
+    }
     this.openModal = this.openModal.bind(this)
     this.closeModal = this.closeModal.bind(this)
   }

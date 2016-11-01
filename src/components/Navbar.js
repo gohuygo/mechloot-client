@@ -1,12 +1,15 @@
 import React from 'react';
 import SubscriptionButton from './SubscriptionButton.js';
+import { Link } from 'react-router'
 
 class Navbar extends React.Component {
   render() {
     return (
       <div className='row'>
         <div className='nav-container'>
-          <span className='brand'>{this.props.brand}</span>
+          <Link to='/'>
+            <span className='brand'>{this.props.brand}</span>
+          </Link>
           <SubscriptionButton />
         </div>
       </div>
@@ -14,4 +17,4 @@ class Navbar extends React.Component {
   }
 }
 
-export default Navbar;
+export default Navbar
