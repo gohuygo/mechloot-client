@@ -7,7 +7,7 @@ import { apiUrlStringBuilder } from '../utils/apiUrlStringBuilder'
 const middlewares = [ thunk ]
 const mockStore = configureStore(middlewares)
 
-describe('Action::Products', () => {
+describe('Action::Authentications', () => {
 
   describe('#fetchProducts()', () => {
     it('posts the correct url and dispatches action', () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import SubscriptionButton from './SubscriptionButton.js';
+import AuthButton from './AuthButton.js';
 import { Link } from 'react-router'
 
 class Navbar extends React.Component {
@@ -10,7 +10,7 @@ class Navbar extends React.Component {
           <Link to='/'>
             <span className='brand'>{this.props.brand}</span>
           </Link>
-          <SubscriptionButton />
+          <AuthButton/>
         </div>
       </div>
     );

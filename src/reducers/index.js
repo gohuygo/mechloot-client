@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
+import auth from './auth'
 
 const productList = (state = [], action) => {
   switch (action.type) {
@@ -10,7 +11,8 @@ const productList = (state = [], action) => {
 }
 
 const rootReducer = combineReducers({
-  productList
+  productList,
+  auth
 })
 
 export default rootReducer
