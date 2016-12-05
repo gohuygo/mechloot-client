@@ -7,15 +7,15 @@ const RADIX = 10
 class ProductShow extends React.Component {
   constructor() {
     super()
-    this.state = {currentProduct: null}
+    this.state = { currentProduct: null }
   }
 
+  // Instead of iterating, maybe actually fetch data from server
   componentWillMount() {
-    const productId = this.props.params.productId
+    const productId = parseInt(this.props.params.productId, RADIX)
     const productList = this.props.productList
-
     productList.map(product => {
-      if(product.id === parseInt(this.props.params.productId, RADIX)){
+      if(product.id === productId){
         this.setState({currentProduct: product})
       }
     })

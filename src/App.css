@@ -61,6 +61,11 @@ a{
   float: right;
 }
 
+.login-button{
+  display: inline-block;
+  float: right;
+}
+
 .default-flashy-button:hover{
   background-image: linear-gradient(to right, #3ec7e0,#526bf4);
 }

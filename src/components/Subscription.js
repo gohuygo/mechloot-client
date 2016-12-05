@@ -1,9 +1,9 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { postEmail } from '../actions/subscriptions'
 import Modal from 'react-modal'
 
-class SubscriptionButton extends React.Component {
+class Subscription extends React.Component {
   constructor () {
     super()
     this.state = {
@@ -36,7 +36,7 @@ class SubscriptionButton extends React.Component {
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
-          contentLabel='Example Modal'
+          contentLabel='Subscribe Modal'
           className='modal-dialog'>
           <div className='modal-content'>
             <div className='modal-body'>
@@ -57,14 +57,14 @@ class SubscriptionButton extends React.Component {
   }
 }
 
-SubscriptionButton.propTypes = {
+Subscription.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = (state) => {
   return {
-  };
-};
+  }
+}
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -74,12 +74,12 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(postEmail(email))
       closeModal()
     }
-  };
-};
+  }
+}
 
-const visibleSubscriptionButton = connect(
+const visibleSubscription = connect(
   mapStateToProps,
   mapDispatchToProps
-)(SubscriptionButton)
+)(Subscription)
 
-export default visibleSubscriptionButton
+export default visibleSubscription

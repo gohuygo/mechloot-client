@@ -2,7 +2,7 @@ import { postEmail } from '../actions/subscriptions'
 import configureStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 import fetchMock from 'fetch-mock'
-import { apiUrlStringBuilder } from '../utilities/apiUrlStringBuilder'
+import { apiUrlStringBuilder } from '../utils/apiUrlStringBuilder'
 
 const middlewares = [ thunk ]
 const mockStore = configureStore(middlewares)
@@ -14,7 +14,7 @@ describe('Action::Subscriptions', () => {
       const email = 'test@example.com'
 
       fetchMock.post(
-        apiUrlStringBuilder()+'/api/v1/subscriptions?email='+email,
+        apiUrlStringBuilder() + '/api/v1/subscriptions?email=' + email,
         { status: 200 }
       );
 

@@ -1,5 +1,5 @@
 import 'isomorphic-fetch'
-import { apiUrlStringBuilder } from '../utilities/apiUrlStringBuilder'
+import { apiUrlStringBuilder } from '../utils/apiUrlStringBuilder'
 
 export const postEmail = (email) => {
   return (dispatch) => {
