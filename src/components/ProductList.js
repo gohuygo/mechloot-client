@@ -10,6 +10,14 @@ class ProductList extends React.Component {
     dispatch(fetchProducts())
   }
 
+  componentDidUpdate() {
+    const dispatch = this.props.dispatch
+    if(this.props.productList.length == 0){
+      dispatch(fetchProducts())
+    }
+
+  }
+
   render() {
     const { productList } = this.props
 
@@ -34,7 +42,8 @@ ProductList.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    productList: state.productList
+    productList: state.productList,
+    auth: state.auth
   }
 }
 

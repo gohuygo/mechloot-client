@@ -11,12 +11,12 @@ export function requestLogin() {
   }
 }
 
-export function receiveLogin(user) {
+export function receiveLogin(user_id_token) {
   return {
     type: LOGIN_SUCCESS,
     isFetching: false,
     isAuthenticated: true,
-    id_token: user.id_token
+    id_token: user_id_token
   }
 }
 

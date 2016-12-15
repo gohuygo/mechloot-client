@@ -32,7 +32,6 @@ App.propTypes = {
 const mapDispatchToProps = (dispatch) => {
   return {
     checkLogin: () => {
-      console.log("WTF")
       const authService = new AuthService(process.env.REACT_APP_AUTH0_CLIENT_ID, process.env.REACT_APP_AUTH0_DOMAIN)
 
       authService.lock.on('authenticated', (authResult) => {
@@ -41,7 +40,7 @@ const mapDispatchToProps = (dispatch) => {
             return dispatch(loginError(error))
           }
           authService.setToken(authResult.idToken)
-          return dispatch(receiveLogin(profile))
+          return dispatch(receiveLogin(authResult.idToken))
         })
       })
 
