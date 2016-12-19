@@ -18,3 +18,10 @@ export const fetchProducts = () => {
                                       productList: productList }))
   }
 }
+
+export function resetProducts() {
+  return {
+    type: SET_PRODUCT_LIST,
+    productList: []
+  }
+}

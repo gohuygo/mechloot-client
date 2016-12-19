@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { fetchProducts } from '../actions/products'
+import { fetchProducts, resetProducts } from '../actions/products'
 import { connect } from 'react-redux'
 import Product from './Product'
 import { Link } from 'react-router'
@@ -12,10 +12,15 @@ class ProductList extends React.Component {
 
   componentDidUpdate() {
     const dispatch = this.props.dispatch
-    if(this.props.productList.length == 0){
-      dispatch(fetchProducts())
+
+    if(!this.props.auth.isAuthenticated){
+      dispatch(resetProducts())
+      return
     }
 
+    if(this.props.productList.length == 0 && this.props.auth.isAuthenticated){
+      dispatch(fetchProducts())
+    }
   }
 
   render() {
