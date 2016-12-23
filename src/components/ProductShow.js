@@ -25,7 +25,7 @@ class ProductShow extends React.Component {
     const currentProduct = this.state.currentProduct
     return(
       <div>
-        <Navbar brand='PIRATE RADIO'/>
+        <Navbar brand='FRACTAL'/>
 
         <div className='col-lg-4 col-md-6 col-sm-12 product-container'>
           {currentProduct.name}

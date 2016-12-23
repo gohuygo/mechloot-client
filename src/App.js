@@ -1,7 +1,8 @@
-import React, { PropTypes } from 'react';
-import Navbar from './components/Navbar.js';
-import ProductList from './components/ProductList.js';
-import CssDebugger from './utils/CssDebugger.js';
+import React, { PropTypes } from 'react'
+import Navbar from './components/Navbar.js'
+import ProductList from './components/ProductList.js'
+import CoverImage from './components/CoverImage.js'
+import CssDebugger from './utils/CssDebugger.js'
 import './App.css';
 import './styles/CustomPaddings.css'
 import { connect } from 'react-redux'
@@ -11,13 +12,15 @@ import AuthService from './utils/AuthService'
 class App extends React.Component {
   constructor(props) {
     super(props)
+
     this.props.checkLogin()
   }
 
   render() {
     return(
       <div>
-        <Navbar brand='PIRATE RADIO'/>
+        <Navbar brand='FRACTAL'/>
+        <CoverImage />
         <ProductList />
         <CssDebugger />
       </div>
