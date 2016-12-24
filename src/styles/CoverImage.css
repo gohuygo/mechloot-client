@@ -10,12 +10,15 @@
   font-size: 29px;
 }
 
+.center-text{
+  text-align: center;
+}
+
 .cta-text {
   font-family: Bebas;
-  padding-top: 50px;
+  padding-top: 40px;
   font-size: 30px;
   overflow: hidden;
-  text-align: center;
 }
 
 .white-text{
