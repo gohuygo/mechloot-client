@@ -1,39 +1,35 @@
 import expect from 'expect'
 import deepFreeze from 'deep-freeze'
-import reducer from './index.js'
+import reducer from './ProductList.js'
 
 describe('index', () => {
   describe('when initial state is not provided', () => {
     it('provides the initial state', () => {
       const action = {}
-
       deepFreeze(action)
 
-      expect(reducer(undefined, action)).toEqual({ productList: [] })
+      expect(reducer(undefined, action)).toEqual([])
     })
 
     it('handles the SET_PRODUCT_LIST action', () => {
       const action = { type: 'SET_PRODUCT_LIST', productList: ['product'] }
-
       deepFreeze(action)
 
-      expect(reducer(undefined, action)).toEqual({ productList: ['product'] })
+      expect(reducer(undefined, action)).toEqual(['product'])
     })
 
     it('handles the undefined action', () => {
       const action = { type: undefined }
-
       deepFreeze(action)
 
-      expect(reducer(undefined, action)).toEqual({ productList: [] })
+      expect(reducer(undefined, action)).toEqual([])
     })
 
     it('handles the default action', () => {
       const action = { type: 'RANDOM-123' }
-
       deepFreeze(action)
 
-      expect(reducer(undefined, action)).toEqual({ productList: [] })
+      expect(reducer(undefined, action)).toEqual([])
     })
   })
 
@@ -45,7 +41,7 @@ describe('index', () => {
       deepFreeze(state)
       deepFreeze(action)
 
-      expect(reducer(state, action)).toEqual({ productList: ['product'] })
+      expect(reducer(state, action)).toEqual(['product'])
     })
 
     it('handles the default action for passed in state', () => {

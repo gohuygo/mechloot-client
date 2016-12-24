@@ -1,14 +1,6 @@
 import { combineReducers } from 'redux'
-import auth from './auth'
-
-const productList = (state = [], action) => {
-  switch (action.type) {
-    case 'SET_PRODUCT_LIST':
-      return action.productList
-    default:
-      return state
-  }
-}
+import auth from './Auth'
+import productList from './ProductList'
 
 const rootReducer = combineReducers({
   productList,
