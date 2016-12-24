@@ -1,4 +1,4 @@
-import { fetchProducts, SET_PRODUCT_LIST } from '../actions/products'
+import { fetchProducts, resetProducts, SET_PRODUCT_LIST } from '../actions/products'
 import configureStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 import fetchMock from 'fetch-mock'
@@ -20,11 +20,22 @@ describe('Action::Products', () => {
 
       const store = mockStore({productList: []})
 
-      store.dispatch(fetchProducts())
+      store.dispatch(fetchProducts('idToken'))
         // TODO: This line below doesnt actually work.
         //       You can set expectedAction to anything and it'll pass.
         .then(response => expect(store.getActions()).toEqual([expectedAction]))
       fetchMock.restore();
+    })
+  })
+
+  describe('#resetProducts()', () => {
+    it('dispatches reset action', () => {
+      const expectedAction = {
+        type: SET_PRODUCT_LIST,
+        productList: []
+      }
+
+      expect(resetProducts()).toEqual(expectedAction)
     })
   })
 })

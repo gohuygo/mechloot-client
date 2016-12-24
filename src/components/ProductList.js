@@ -7,7 +7,7 @@ import { Link } from 'react-router'
 class ProductList extends React.Component {
   componentDidMount() {
     const dispatch = this.props.dispatch
-    dispatch(fetchProducts())
+    dispatch(fetchProducts(localStorage.getItem('id_token')))
   }
 
   componentDidUpdate() {
