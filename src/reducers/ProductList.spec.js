@@ -1,6 +1,6 @@
 import expect from 'expect'
 import deepFreeze from 'deep-freeze'
-import reducer from './productList.js'
+import reducer from './productList'
 
 describe('index', () => {
   describe('when initial state is not provided', () => {
