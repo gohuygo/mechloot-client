@@ -1,4 +1,5 @@
 import Auth0Lock from 'auth0-lock'
+import { browserHistory } from 'react-router'
 
 export default class AuthService {
   constructor(clientId, domain) {
@@ -8,7 +9,10 @@ export default class AuthService {
   }
 
   _doAuthentication(authResult){
+    console.log(authResult)
     this.setToken(authResult.idToken)
+    browserHistory.replace('/user/'+authResult.idToken)
+
   }
 
   login() {
@@ -20,6 +24,7 @@ export default class AuthService {
   }
 
   setToken(idToken) {
+    console.log("WTF?")
     localStorage.setItem('id_token', idToken)
   }
 

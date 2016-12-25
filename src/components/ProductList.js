@@ -42,7 +42,7 @@ class ProductList extends React.Component {
   }
 }
 
-// TODO: Refactor to container/presenter
+// TODO: Refactor to container or presenter
 ProductList.propTypes = {
   productList: PropTypes.array
 }
