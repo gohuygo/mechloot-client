@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import auth from './Auth'
-import productList from './ProductList'
+import auth from './auth'
+import productList from './productList'
 
 const rootReducer = combineReducers({
   productList,
