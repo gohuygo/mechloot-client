@@ -9,7 +9,6 @@ export default class AuthService {
   }
 
   _doAuthentication(authResult){
-    console.log(authResult)
     this.setToken(authResult.idToken)
     browserHistory.replace('/dashboard')
 
@@ -24,7 +23,6 @@ export default class AuthService {
   }
 
   setToken(idToken) {
-    console.log("WTF?")
     localStorage.setItem('id_token', idToken)
   }
 
