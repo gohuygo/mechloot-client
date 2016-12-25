@@ -11,7 +11,7 @@ export default class AuthService {
   _doAuthentication(authResult){
     console.log(authResult)
     this.setToken(authResult.idToken)
-    browserHistory.replace('/user/'+authResult.idToken)
+    browserHistory.replace('/dashboard')
 
   }
 

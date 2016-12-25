@@ -19,7 +19,7 @@ ReactDOM.render(
         <Route path='/product/:productId' component={ProductShow}/>
       </Route>
 
-      <Route path='users' component={UserDashboard}>
+      <Route path='dashboard' component={UserDashboard}>
         <Route path='/dashboard' component={UserDashboard}/>
       </Route>
 
